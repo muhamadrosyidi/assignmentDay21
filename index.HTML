@@ -100,7 +100,7 @@
                 </div>
                 <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
                     <div class="about-text">
-                        <h2>About Us</h2>
+                        <h2 id="abt">About Us</h2>
                         <p style="text-align: justify;">Bersama IndoPacker, Kemudahan dan Kenyamanan Liburan Anda Menjadi yang Paling Utama. 
                             Perjalanan Wisata Keluarga, Sekolah, Perusahaan, atau Tour Bersama Pasangan dan Rombongan akan Lebih Berkesan. 
                             Didukung dengan Akomodasi Transportasi yang Lengkap dan Tim yang Berpengalaman Selama Lebih dari 10 tahun, 
@@ -122,8 +122,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="section-header text-center pb-5">
-                        <h2>Contact Us</h2>
+                    <div class="section-header text-center pb-5" id="tis">
+                        <h2 id="chng">Contact Us</h2>
                         <p>Hubungi Customer Service Kami untuk Mengetahui Lebih Jauh Mengenai IndoPacker dengan Mengisi Kolom Berikut</p>
                     </div>
                 </div>
@@ -169,9 +169,28 @@
     </footer>
 
     <script>
+        console.log(document);
+        // manipulasi DOM untuk memunculkan alert saat sudah di klik di elemen nya
         document.getElementById("submit").onclick = () => {
-            alert("Saran, Kritik maupun Pertanyaan sudah diterima tim Customer Service Kami. Terima kasih");
+            alert("Saran, Kritik maupun Pertanyaan Anda, sudah diterima tim Customer Service Kami. Terima kasih");
         }
+
+        // manipulasi DOM untuk memunculkan alert saat moise di posisi suatu elemen
+        document.getElementById("abt").onmouseover = () => {
+            alert("Selamat, Anda Pengunjung Web Kami ke 1.000.000 !!!!");
+        }
+
+        // manipulasi DOM untuk menggantikan elemen
+        let text = document.createElement("h2");
+            text.innerHTML = "Terima Kasih Sudah Mengunjungi Website Kami ";
+
+        let list = document.getElementById("tis");
+        let selectedNode = document.getElementById("chng");
+
+        setTimeout(() => {
+            selectedNode.parentElement.replaceChild(text, selectedNode);
+        }, 3000);
+
     </script>
 </body>
 </html>
